@@ -13,21 +13,28 @@ FUENTES = [
 CATEGORIAS = {
     "alternativas a google": "Alternativas a Google",
     "google avanzado": "Google avanzado",
+    "optimiza tus búsquedas": "Google avanzado",
     "bases de datos": "Bases de datos y recursos-e",
     "revistas y libros": "Bases de datos y recursos-e",
     "catálogo": "Catálogo BUA",
     "catalogo": "Catálogo BUA",
     "dialnet": "Dialnet y CSIC",
     "csic": "Dialnet y CSIC",
-    "prensa": "Prensa digital",
+    "prensa digital": "Prensa digital",
     "hemeroteca": "Prensa digital",
     "repositorio": "Repositorios institucionales",
-    "repositorios": "Repositorios institucionales",
     "servicios virtuales": "Servicios virtuales BUA",
     "biblioteca en un click": "Servicios virtuales BUA",
-    "técnicas": "Técnicas de búsqueda",
-    "tecnicas": "Técnicas de búsqueda",
+    "técnicas y estrategias": "Técnicas de búsqueda",
     "estrategias de búsqueda": "Técnicas de búsqueda",
+}
+
+# Títulos a ignorar (falsos positivos)
+IGNORAR = {
+    "formulario de inscripción", "inscripción", "inscripcion",
+    "modalidad:", "modalidad", "duración:", "lugar:", "lugar",
+    "rellena este formulario", "indíces csic", "indíces csic",
+    "recolecta", "rua", "dialnet", "indices csic"
 }
 
 def detectar_categoria(titulo):
@@ -37,6 +44,24 @@ def detectar_categoria(titulo):
             return categoria
     return "Otros"
 
+def es_titulo_valido(texto):
+    """Comprueba que el texto es un título real de curso y no un elemento de la lista."""
+    t = texto.strip().lower().rstrip(":")
+    if t in IGNORAR:
+        return False
+    if len(texto) < 15:
+        return False
+    # Los títulos reales tienen al menos 4 palabras
+    if len(texto.split()) < 4:
+        return False
+    # No empieza por dígito (teléfonos)
+    if texto[0].isdigit():
+        return False
+    # No es un email
+    if "@" in texto:
+        return False
+    return True
+
 def extraer_cursos(url, lugar_default):
     headers = {"User-Agent": "Mozilla/5.0 (compatible; BUA-scraper/1.0)"}
     resp = requests.get(url, headers=headers, timeout=15)
@@ -44,42 +69,59 @@ def extraer_cursos(url, lugar_default):
     soup = BeautifulSoup(resp.text, "html.parser")
 
     cursos = []
-    contenido = soup.find("div", id="contenido-pagina") or soup.find("main") or soup.body
 
-    # Buscar bloques de curso: título en negrita seguido de h2 Descripción
-    titulos = contenido.find_all("strong")
-
-    for strong in titulos:
+    # Buscar todos los elementos <strong> que sean títulos de curso
+    # Los títulos están en <strong> seguidos de un <h2>Descripción</h2>
+    for strong in soup.find_all("strong"):
         titulo = strong.get_text(strip=True)
-        if len(titulo) < 10:
+
+        if not es_titulo_valido(titulo):
             continue
 
-        # Buscar el siguiente h2 con texto "Descripción"
-        siguiente = strong.find_next("h2")
-        if not siguiente or "escripci" not in siguiente.get_text():
+        # Verificar que va seguido de un h2 con "Descripción"
+        siguiente_h2 = strong.find_next("h2")
+        if not siguiente_h2:
+            continue
+        if "escripci" not in siguiente_h2.get_text():
+            continue
+
+        # Comprobar que el h2 está suficientemente cerca (no más de 3 elementos entre medias)
+        # Para evitar falsos positivos lejanos
+        entre = []
+        nodo = strong.next_sibling
+        encontrado = False
+        for _ in range(10):
+            if nodo is None:
+                break
+            if hasattr(nodo, 'name') and nodo.name == 'h2' and "escripci" in nodo.get_text():
+                encontrado = True
+                break
+            nodo = nodo.next_sibling
+        
+        if not encontrado:
             continue
 
         # Descripción: párrafo tras el h2
-        desc_tag = siguiente.find_next_sibling()
+        desc_tag = siguiente_h2.find_next_sibling()
         desc = ""
         if desc_tag and desc_tag.name == "p":
             desc = desc_tag.get_text(strip=True)
 
         # Lista ul con Duración, Lugar, Modalidad, Inscripción
-        ul = siguiente.find_next("ul")
+        ul = siguiente_h2.find_next("ul")
         duracion = lugar = modalidad = ""
         url_inscripcion = url_formulario = ""
 
         if ul:
             for li in ul.find_all("li"):
-                texto = li.get_text(" ", strip=True)
-                texto_lower = texto.lower()
+                texto_li = li.get_text(" ", strip=True)
+                texto_lower = texto_li.lower()
                 if "duración" in texto_lower or "duracion" in texto_lower:
-                    duracion = re.sub(r"(?i)duración\s*:?\s*", "", texto).strip()
-                elif "lugar" in texto_lower:
-                    lugar = re.sub(r"(?i)lugar\s*:?\s*", "", texto).strip()
+                    duracion = re.sub(r"(?i)\*?\*?duración\s*:?\s*\*?\*?", "", texto_li).strip()
+                elif "lugar" in texto_lower and not duracion == "":
+                    lugar = re.sub(r"(?i)\*?\*?lugar\s*:?\s*\*?\*?", "", texto_li).strip()
                 elif "modalidad" in texto_lower:
-                    modalidad = re.sub(r"(?i)modalidad\s*:?\s*", "", texto).strip()
+                    modalidad = re.sub(r"(?i)\*?\*?modalidad\s*:?\s*\*?\*?", "", texto_li).strip()
                 elif "inscripci" in texto_lower:
                     enlaces = li.find_all("a", href=True)
                     for a in enlaces:
@@ -110,8 +152,8 @@ def extraer_cursos(url, lugar_default):
             "desc": desc,
             "duracion": duracion,
             "lugar": lugar_filtro,
-            "lugarCompleto": lugar,
-            "modalidad": modalidad_norm,
+            "lugarCompleto": lugar if lugar else "Punt BIU / Aula informática planta baja de la Biblioteca General",
+            "modalidad": modalidad_norm if modalidad_norm else "presencial / online",
             "urlInscripcion": url_inscripcion,
             "urlFormulario": url_formulario
         })
