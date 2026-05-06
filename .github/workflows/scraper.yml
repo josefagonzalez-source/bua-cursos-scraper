@@ -2,8 +2,8 @@ name: Scraper BUA cursos
 
 on:
   schedule:
-    - cron: '0 5 * * *'   # cada día a las 5:00 UTC (7:00 hora española)
-  workflow_dispatch:        # permite ejecutarlo manualmente desde GitHub
+    - cron: '0 5 * * *'
+  workflow_dispatch:
 
 jobs:
   scrape:
@@ -27,7 +27,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git pull --rebase
           git add cursos.json
           git diff --cached --quiet || git commit -m "Actualizar cursos.json [bot]"
-          git push
+          git push --force
