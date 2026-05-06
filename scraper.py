@@ -47,24 +47,17 @@ def extraer_cursos(url, lugar_default):
     resp.encoding = "utf-8"
     soup = BeautifulSoup(resp.text, "html.parser")
 
-    # Imprimir todos los strongs para debug
-    todos_strongs = [s.get_text(strip=True) for s in soup.find_all("strong")]
-    print("STRONGS:", todos_strongs[:30])
-
     cursos = []
 
     for h2 in soup.find_all("h2"):
         if "escripci" not in h2.get_text():
             continue
 
-        # Buscar el <p><strong> más cercano antes del h2
+        # Buscar el <p><strong> más cercano ANTES del h2 — recorremos hacia atrás
         titulo = ""
-        for elem in soup.find_all(["p", "strong"]):
-            # Solo elementos que vienen antes del h2
-            if elem == h2:
-                break
-            if elem.name == "p":
-                strong = elem.find("strong")
+        for prev in h2.find_all_previous(["p", "strong"]):
+            if prev.name == "p":
+                strong = prev.find("strong")
                 if strong:
                     texto = strong.get_text(strip=True)
                     t_lower = texto.lower().rstrip(":")
@@ -73,6 +66,16 @@ def extraer_cursos(url, lugar_default):
                         and not texto[0].isdigit()
                         and "@" not in texto):
                         titulo = texto
+                        break
+            elif prev.name == "strong":
+                texto = prev.get_text(strip=True)
+                t_lower = texto.lower().rstrip(":")
+                if (len(texto) > 10
+                    and t_lower not in IGNORAR
+                    and not texto[0].isdigit()
+                    and "@" not in texto):
+                    titulo = texto
+                    break
 
         if not titulo:
             continue
