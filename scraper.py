@@ -34,6 +34,26 @@ def detectar_categoria(titulo):
             return categoria
     return "Otros"
 
+def es_titulo_valido(texto):
+    if not texto or len(texto) < 15 or len(texto.split()) < 3:
+        return False
+    t = texto.lower()
+    if t.startswith("duración") or t.startswith("duracion"):
+        return False
+    if t.startswith("lugar"):
+        return False
+    if t.startswith("modalidad"):
+        return False
+    if t.startswith("inscripci"):
+        return False
+    if t.startswith("formulario"):
+        return False
+    if "@" in texto:
+        return False
+    if texto[0].isdigit():
+        return False
+    return True
+
 def extraer_cursos(url, lugar_default):
     headers = {"User-Agent": "Mozilla/5.0 (compatible; BUA-scraper/1.0)"}
     resp = requests.get(url, headers=headers, timeout=15)
@@ -42,28 +62,23 @@ def extraer_cursos(url, lugar_default):
 
     cursos = []
 
-    # Buscar todas las secciones con h2 "Descripción"
     for h2 in soup.find_all("h2"):
         if "escripci" not in h2.get_text():
             continue
 
-        # Buscar el título: strong anterior en cualquier nivel
         titulo = ""
-        # Primero buscar en el padre de h2
         parent = h2.parent
         if parent:
-            # Buscar strong antes del h2 dentro del mismo padre
             for elem in parent.find_all("strong"):
                 texto = elem.get_text(strip=True)
-                if len(texto) > 15 and len(texto.split()) >= 3:
+                if es_titulo_valido(texto):
                     titulo = texto
                     break
 
-        # Si no encontramos, buscar en el abuelo
         if not titulo and parent and parent.parent:
             for elem in parent.parent.find_all("strong"):
                 texto = elem.get_text(strip=True)
-                if len(texto) > 15 and len(texto.split()) >= 3:
+                if es_titulo_valido(texto):
                     titulo = texto
                     break
 
@@ -72,13 +87,11 @@ def extraer_cursos(url, lugar_default):
 
         print(f"Título encontrado: {titulo}")
 
-        # Descripción: párrafo tras el h2
         desc = ""
         desc_tag = h2.find_next("p")
         if desc_tag:
             desc = desc_tag.get_text(strip=True)
 
-        # Lista ul
         ul = h2.find_next("ul")
         duracion = lugar = modalidad = ""
         url_inscripcion = url_formulario = ""
