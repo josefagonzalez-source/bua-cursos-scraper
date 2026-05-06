@@ -27,6 +27,13 @@ CATEGORIAS = {
     "estrategias de búsqueda": "Técnicas de búsqueda",
 }
 
+IGNORAR = {
+    "formulario de inscripción", "inscripción", "inscripcion",
+    "modalidad:", "modalidad", "duración:", "duración", "lugar:", "lugar",
+    "rellena este formulario", "recolecta", "rua", "dialnet", "indices csic",
+    "indíces csic"
+}
+
 def detectar_categoria(titulo):
     titulo_lower = titulo.lower()
     for clave, categoria in CATEGORIAS.items():
@@ -34,31 +41,15 @@ def detectar_categoria(titulo):
             return categoria
     return "Otros"
 
-def es_titulo_valido(texto):
-    if not texto or len(texto) < 15 or len(texto.split()) < 3:
-        return False
-    t = texto.lower()
-    if t.startswith("duración") or t.startswith("duracion"):
-        return False
-    if t.startswith("lugar"):
-        return False
-    if t.startswith("modalidad"):
-        return False
-    if t.startswith("inscripci"):
-        return False
-    if t.startswith("formulario"):
-        return False
-    if "@" in texto:
-        return False
-    if texto[0].isdigit():
-        return False
-    return True
-
 def extraer_cursos(url, lugar_default):
     headers = {"User-Agent": "Mozilla/5.0 (compatible; BUA-scraper/1.0)"}
     resp = requests.get(url, headers=headers, timeout=15)
     resp.encoding = "utf-8"
     soup = BeautifulSoup(resp.text, "html.parser")
+
+    # Imprimir todos los strongs para debug
+    todos_strongs = [s.get_text(strip=True) for s in soup.find_all("strong")]
+    print("STRONGS:", todos_strongs[:30])
 
     cursos = []
 
@@ -66,21 +57,22 @@ def extraer_cursos(url, lugar_default):
         if "escripci" not in h2.get_text():
             continue
 
+        # Buscar el <p><strong> más cercano antes del h2
         titulo = ""
-        parent = h2.parent
-        if parent:
-            for elem in parent.find_all("strong"):
-                texto = elem.get_text(strip=True)
-                if es_titulo_valido(texto):
-                    titulo = texto
-                    break
-
-        if not titulo and parent and parent.parent:
-            for elem in parent.parent.find_all("strong"):
-                texto = elem.get_text(strip=True)
-                if es_titulo_valido(texto):
-                    titulo = texto
-                    break
+        for elem in soup.find_all(["p", "strong"]):
+            # Solo elementos que vienen antes del h2
+            if elem == h2:
+                break
+            if elem.name == "p":
+                strong = elem.find("strong")
+                if strong:
+                    texto = strong.get_text(strip=True)
+                    t_lower = texto.lower().rstrip(":")
+                    if (len(texto) > 10
+                        and t_lower not in IGNORAR
+                        and not texto[0].isdigit()
+                        and "@" not in texto):
+                        titulo = texto
 
         if not titulo:
             continue
