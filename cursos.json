@@ -152,16 +152,5 @@
     "modalidad": "presencial / online",
     "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
     "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
-  },
-  {
-    "titulo": "Taller avanzado de I+D: (esto es una entrada de testeo, descartar esta entrada)",
-    "categoria": "Otros",
-    "desc": "Descubre el funcionamiento de la inteligencia artificial y cómo interactuar con ella, para desarrollar pensamiento crítico y facilitar las fases de investigación y creación en los trabajos académicos. Aprende a analizar y optimizar prompts mediante ingeniería inversa, a convertir la IA en un tutor basado en preguntas, a transformar textos en representaciones visuales, a detectar sesgos, falacias y debilidades argumentativas, y a identificar patrones estilísticos y contenido generado por IA. Explora sus potencialidades para validar y comparar información (rastrear el origen de afirmaciones, realizar análisis comparativos de fuentes), diseñar estrategias de búsqueda académica rigurosas y eficientes, y producir y editar textos adaptados a distintos contextos y audiencias.",
-    "duracion": "2 horas. Solo en horario de manaña.",
-    "lugar": "Punt BIU",
-    "lugarCompleto": "PuntBIU",
-    "modalidad": "presencial / online",
-    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
-    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
   }
 ]
