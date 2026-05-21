@@ -152,5 +152,16 @@
     "modalidad": "presencial / online",
     "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
     "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "Taller avanzado de IA: (curso ficticio de testeo)",
+    "categoria": "Otros",
+    "desc": "CURSO DE TESTEO, ENTRADA INVALIDADA",
+    "duracion": "2 horas. Solo en horario de manaña.",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
   }
 ]
