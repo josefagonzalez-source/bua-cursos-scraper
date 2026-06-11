@@ -1,1 +1,145 @@
-[]
+[
+  {
+    "titulo": "La Biblioteca en un click. Los servicios virtuales de la Biblioteca a través de la página web",
+    "categoria": "Servicios virtuales BUA",
+    "desc": "Recorrido por los principales servicios virtuales que ofrece la Biblioteca de la UA (renovaciones y reservas de obras en préstamo, reserva de salas de trabajo en grupo, acceso remoto a los recursos-e, consultas, solicitudes de compra, etc), así como otra información de interés proporcionada por la página web (tipos y períodos de préstamo, horarios, carta de servicios, colecciones especiales, normativas, guías y tutoriales, estadísticas, etc.).",
+    "duracion": "1-1,5 horas",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "Técnicas y estrategias de búsqueda",
+    "categoria": "Técnicas de búsqueda",
+    "desc": "Pautas para interrogar de manera más eficiente los recursos de información. En esta sesión aprenderemos a formular estrategias de búsqueda, seleccionando las palabras clave más adecuadas y utilizando correctamente los campos de búsqueda y los operadores (las partículas que nos permiten combinar términos y campos). También aprenderemos a reformularlas si los resultados no se adecúan a nuestra necesidad de información y, además, a usar truncamientos y tesauros.",
+    "duracion": "1,5 -2 horas",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "El catálogo de la BUA",
+    "categoria": "Catálogo BUA",
+    "desc": "Aprende a localizar distintos tipos de documentos impresos, multimedia y electrónicos (libros, capítulos de libro, revistas, artículos, periódicos, noticias, mapas, música, películas, programas) y a acceder a su contenido. Consulta ubicación, número de ejemplares y disponibilidad de los ejemplares físicos y aprende a descargar los documentos a texto completo. Te enseñaremos también a utilizar la búsqueda avanzada, las opciones de filtrado y los operadores, y a gestionar tu perfil, consultar tus préstamos, realizar renovaciones y reservas, y a trabajar con los resultados (guardar búsquedas y listas personales de documentos, gestionar favoritos, crear alertas, exportar referencias, etc.).",
+    "duracion": "1,5 - 2 horas",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "Bases de datos y revistas y libros electrónicos",
+    "categoria": "Bases de datos y recursos-e",
+    "desc": "Aprende a diferenciar las principales fuentes de información y a seleccionar las más adecuadas para cada ocasión; a acceder a las bases de datos y a los portales de revistas-e y libros-e, a consultarlos elaborando estrategias de búsqueda y utilizando técnicas avanzadas con truncamientos y operadores, y a utilizar sus distintas funcionalidades. Además, te enseñaremos a llegar al contenido íntegro del artículo o el libro, en función de su formato impreso o electrónico, insistiendo, en este último caso, en las distintas modalidades de consulta y descarga.",
+    "duracion": "1,5 - 2 horas",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "Información científica en español: Dialnet y CSIC",
+    "categoria": "Dialnet y CSIC",
+    "desc": "Aprende a utilizar Dialnet e InDICEs CSIC, las principales bases de datos nacionales, de carácter multidisciplinar, que recopilan información científica y académica en castellano: opciones de búsqueda y filtrado, estrategias de búsqueda, navegación y consulta de revistas, opciones para trabajar con los resultados (exportar referencias, guardar búsquedas y crear alertas) y descarga de documentos en libre acceso.Dialnetincluye artículos de revista, libros, capítulos de libros y tesis doctorales, y facilita información sobre autores, revistas y métricas, eInDICEs CSICrecoge la producción científica publicada en España desde los años 70 (artículos de revistas científicas y de forma selectiva actas de congresos, series y compilaciones).",
+    "duracion": "1,5 - 2 horas",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "Prensa digital. Hemeroteca de diarios y bases de datos de prensa",
+    "categoria": "Bases de datos y recursos-e",
+    "desc": "La prensa se ha convertido en una fuente esencial de información para ciertas áreas de conocimiento. En esta sesión aprendemos a consultar los principales diarios pertenecientes a la colección de la BUA y a localizar noticias sobre temas concretos, a través del catálogo de la BUA, bases de datos de prensa o los buscadores de prensa nacional, así como a consultar las hemerotecas de los principales diarios nacionales y locales.",
+    "duracion": "1,5 - 2 horas",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "Información científica en abierto: repositorios institucionales",
+    "categoria": "Repositorios institucionales",
+    "desc": "Los repositorios institucionales son herramientas que recopilan información de carácter científico, docente o institucional de las organizaciones que las mantienen. En esta sesión aprenderás a consultarRUA, el repositorio institucional de la UA, yRecolecta, el agregador nacional de repositorios científicos de acceso abierto, y a visualizar y descargar documentos. Además, conocerás otros repositorios destacados a nivel nacional o internacional de las distintas áreas temáticas.",
+    "duracion": "1 - 1,5 horas",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "Google avanzado. Optimiza tus búsquedas en Google",
+    "categoria": "Google avanzado",
+    "desc": "Google es el buscador más popular del mundo, pero, detrás de su aparente sencillez, ofrece más posibilidades de las que utilizamos habitualmente. En esta sesión aprenderás a sacar mayor partido al buscador y a usarlo para encontrar información de forma más rápida y precisa. Verás cómo mejorar los resultados de búsqueda mediante las opciones avanzadas (formulario, operadores, comandos y filtros). También conocerás funciones menos visibles, como el modo Verbatim, la opción “Voy a tener suerte”, las preferencias de personalización o algunas utilidades integradas de Google, como el traductor y la calculadora. Además, aprenderás a crear y gestionar alertas para estar al día sobre temas de tu interés, y descubrirás cómo crear tus propios buscadores personalizados para localizar información en sitios web concretos.",
+    "duracion": "1,5 - 2 horas. Solo en horario de tarde",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "Alternativas a Google: otras herramientas para localizar información en la web",
+    "categoria": "Alternativas a Google",
+    "desc": "Google es la herramienta más utilizada para buscar información en la web, pero no siempre es la más adecuada. Además, presenta algunos inconvenientes, como su modelo de negocio basado en la explotación comercial de los datos de sus usuarios. En esta sesión, descubrirás otras formas de buscar información en Internet en función de tus necesidades. Comenzaremos explicando cómo se organiza la información en la web, cómo funcionan los motores de búsqueda y qué limitaciones tienen. A continuación, exploraremos distintos tipos de buscadores: generalistas, académicos, especializados, ecológicos, centrados en la privacidad o pensados para obtener respuestas directas. También veremos nuevas formas de búsqueda apoyadas en inteligencia artificial y herramientas como Wayback Machine, que permiten consultar versiones antiguas de páginas web y recuperar información desaparecida.",
+    "duracion": "1,5 - 2 horas. Solo en horario de tarde",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "Cómo conseguir todos los documentos de tu bibliografía",
+    "categoria": "Otros",
+    "desc": "¿Tienes una bibliografía y necesitas conseguir los documentos que contiene? En esta sesión aprenderás a interpretar correctamente referencias bibliográficas de libros, artículos, capítulos de libro y otros materiales, identificando los datos clave que permiten localizarlos: autoría, título, año de publicación, revista, editorial, ISBN, ISSN, DOI, etc. Descubrirás cómo utilizar esa información para buscar documentos en el catálogo de la biblioteca, bases de datos, plataformas de recursos electrónicos y otras herramientas de localización. También aprenderás a acceder al texto completo cuando esté disponible, comprobar la disponibilidad de los documentos, diferenciar entre acceso impreso y electrónico, localizar ediciones, números o ejemplares concretos, y saber qué opciones existen cuando un documento no forma parte de la colección de la biblioteca.",
+    "duracion": "1,5 - 2 horas.",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "Cómo usar la IA para estudiar mejor",
+    "categoria": "Otros",
+    "desc": "Descubre las posibilidades, limitaciones y riesgos del uso de la inteligencia artificial como herramienta de apoyo al estudio y al aprendizaje en el ámbito universitario.  Aprende, a través de casos prácticos, a formular prompts orientados a organizar el tiempo de estudio, resolver dudas, desarrollar técnicas de estudio, generar resúmenes y materiales de repaso para preparar exámenes de desarrollo o de tipo test, adaptar explicaciones a distintos niveles de dificultad o estudiar idiomas. También se tratarán cuestiones como la fiabilidad de la información, la privacidad, el pensamiento crítico y la integridad académica.",
+    "duracion": "1,5 - 2 horas. Solo en horario de tarde",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "Cómo utilizar la Inteligencia artificial para tus trabajos académicos",
+    "categoria": "Otros",
+    "desc": "Aprende a utilizar la IA en las distintas fases de elaboración de un trabajo académico, desde la generación inicial de ideas hasta la revisión final del texto o la preparación de presentaciones y materiales audiovisuales. Te mostraremos cómo formular prompts orientados a la organización y recopilación de ideas, la exploración de enfoques, la búsqueda preliminar de información, la mejora de la redacción y la creación de recursos visuales. Además, incidiremos en las limitaciones y riesgos de su uso relacionados con la fiabilidad de la información, los sesgos, la autoría, la integridad académica, la citación de fuentes y el uso ético de los contenidos generados.",
+    "duracion": "1,5 - 2 horas. Solo en horario de tarde.",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  },
+  {
+    "titulo": "Taller avanzado de IA: Aprendizaje activo con inteligencia artificial",
+    "categoria": "Otros",
+    "desc": "Descubre el funcionamiento de la inteligencia artificial y cómo interactuar con ella, para desarrollar pensamiento crítico y facilitar las fases de investigación y creación en los trabajos académicos. Aprende a analizar y optimizar prompts mediante ingeniería inversa, a convertir la IA en un tutor basado en preguntas, a transformar textos en representaciones visuales, a detectar sesgos, falacias y debilidades argumentativas, y a identificar patrones estilísticos y contenido generado por IA. Explora sus potencialidades para validar y comparar información (rastrear el origen de afirmaciones, realizar análisis comparativos de fuentes), diseñar estrategias de búsqueda académica rigurosas y eficientes, y producir y editar textos adaptados a distintos contextos y audiencias.",
+    "duracion": "2 horas. Solo en horario de manaña.",
+    "lugar": "Punt BIU",
+    "lugarCompleto": "PuntBIU",
+    "modalidad": "presencial / online",
+    "urlInscripcion": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6603&idioma=es",
+    "urlFormulario": "https://cvnet.cpd.ua.es/uaCuestionarios/preguntas.aspx?idcuestionario=6528&idioma=es"
+  }
+]
